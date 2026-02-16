@@ -3,6 +3,7 @@ import { authOptions } from "@/lib/authOptions";
 
 export default async function AdminDashboard() {
   const session = await getServerSession(authOptions);
+  console.log("Session=>",session)
 
   if (!session || session.user.role !== "admin") {
     return <h1>Access Denied</h1>;
