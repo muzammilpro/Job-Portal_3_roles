@@ -1009,42 +1009,7 @@ export default function UserDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50">
-      {/* Enhanced Header */}
-      <div className="bg-white/80 backdrop-blur-md border-b border-gray-200/50 sticky top-0 z-50 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-            <div className="flex items-center space-x-4">
-              <div className="p-3 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg">
-                <MdDashboard className="w-6 h-6 text-white" />
-              </div>
-              <div>
-                <h1 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-                  Welcome back, {session.user.name?.split(' ')[0]}!
-                </h1>
-                <p className="text-gray-600 flex items-center mt-1">
-                  <FaRocket className="w-4 h-4 text-blue-500 mr-2" />
-                  Track your applications and manage your career journey
-                </p>
-              </div>
-            </div>
-            
-            <div className="flex items-center space-x-3 mt-4 md:mt-0">
-              <div className="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-medium rounded-xl flex items-center border border-blue-100 shadow-sm">
-                <FaEnvelope className="w-4 h-4 mr-2 text-blue-600" />
-                <span className="text-sm hidden md:inline">{session.user.email}</span>
-                <span className="text-sm md:hidden">Profile</span>
-              </div>
-              <button className="p-2 hover:bg-gray-100 rounded-xl transition-all duration-300 relative">
-                <FaBell className="w-5 h-5 text-gray-600" />
-                <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full"></span>
-              </button>
-              <button className="p-2 hover:bg-gray-100 rounded-xl transition-all duration-300">
-                <FaBookmark className="w-5 h-5 text-gray-600" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+   
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Enhanced Stats Cards */}
