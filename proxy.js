@@ -13,10 +13,10 @@ export async function proxy(req) {
 
   const role = token.role;
 
-  if (url.pathname.startsWith("/admin") && role !== "admin") {
-    url.pathname = "/unauthorized";
-    return NextResponse.redirect(url);
-  }
+  // if (url.pathname.startsWith("/admin") && role !== "admin") {
+  //   url.pathname = "/unauthorized";
+  //   return NextResponse.redirect(url);
+  // }
   if (url.pathname.startsWith("/company") && role !== "company") {
     url.pathname = "/unauthorized";
     return NextResponse.redirect(url);
