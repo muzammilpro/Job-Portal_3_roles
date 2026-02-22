@@ -59,6 +59,14 @@ export async function PUT(request) {
         { status: 400 }
       );
     }
+
+    const validRoles = ["admin", "company", "applicant"];
+    if (!validRoles.includes(role)) {
+      return NextResponse.json(
+        { error: "Invalid role. Use: admin, company, or applicant" },
+        { status: 400 }
+      );
+    }
     
     // Don't allow changing own role
     if (userId === session.user.id) {
@@ -76,13 +84,13 @@ export async function PUT(request) {
       );
     }
     
+    const oldRole = user.role;
     user.role = role;
-    
-    // If changing to/from company, update companyStatus
-    if (role === "company" && user.role !== "company") {
+
+    // Keep company approval flow consistent when crossing company boundary.
+    if (oldRole !== role && (oldRole === "company" || role === "company")) {
       user.companyStatus = "pending";
-    } else if (role !== "company" && user.role === "company") {
-      user.companyStatus = "pending";
+      user.rejectionReason = null;
     }
     
     await user.save();

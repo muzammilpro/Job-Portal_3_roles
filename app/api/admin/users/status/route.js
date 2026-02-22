@@ -57,13 +57,15 @@ export async function PUT(request) {
       );
     }
     
+    const oldStatus = user.companyStatus;
+
     // Update status
     user.companyStatus = status;
     await user.save();
     
     console.log("Status updated successfully:", { 
       userId, 
-      oldStatus: user.companyStatus, 
+      oldStatus,
       newStatus: status 
     });
     

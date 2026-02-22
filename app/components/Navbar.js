@@ -771,8 +771,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
 
-  console.log("navbar Console=>", session)
-
   // Handle scroll effect
   useEffect(() => {
     const handleScroll = () => {

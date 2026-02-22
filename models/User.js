@@ -352,6 +352,16 @@ const UserSchema = new mongoose.Schema(
       required: false,
     },
 
+    // Password reset fields
+    resetPasswordToken: {
+      type: String,
+      default: null,
+    },
+    resetPasswordExpires: {
+      type: Date,
+      default: null,
+    },
+
     // Applicant profile
     profile: {
       type: profileSchema,
